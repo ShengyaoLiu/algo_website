@@ -3,6 +3,10 @@
         * {
             font-family: 'Inter', sans-serif;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
         
         .gradient-text {
             background: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4);

@@ -157,11 +157,11 @@ function App() {
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a href="#" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('platform')}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('solutions')}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('company')}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('resources')}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('contacts')}</a>
+              <a href="#platform" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('platform')}</a>
+              <a href="#solutions" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('solutions')}</a>
+              <a href="#company" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('company')}</a>
+              <a href="#resources" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('resources')}</a>
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('contacts')}</a>
               
               {/* 移动端语言切换 */}
               <div className="pt-4 pb-3 border-t border-gray-200">
@@ -262,7 +262,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section id="solutions" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mt-20 mb-35">
             <h2 className="text-7xl font-bold text-gray-900 mb-4 fade-in-up">
@@ -370,7 +370,7 @@ function App() {
       </section>
 
       {/* Platform Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="platform" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             {t('platform.title')}
@@ -385,13 +385,13 @@ function App() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 bg-white">
+      <section id="company" className="py-16 bg-white">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             {t('about.title')}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div id="contact" className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Singapore Office */}
             <div className="bg-gray-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about.singapore')}</h3>
@@ -430,7 +430,7 @@ function App() {
           </div>
           
           {/* Legal Links */}
-          <div className="mt-12 text-center">
+          <div id="resources" className="mt-12 text-center">
             <div className="flex justify-center space-x-8">
               <a 
                 href="http://www.algoquality.com/ALGO+%20Privacy%20Policy.html" 
@@ -466,4 +466,3 @@ function App() {
 }
 
 export default App
-
