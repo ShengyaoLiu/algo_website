@@ -1,2 +1,2 @@
 # algo_website
-Website for ALGO Quality Company
+Official website for ALGO Quality Company
