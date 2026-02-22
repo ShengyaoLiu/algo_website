@@ -16,6 +16,21 @@ import callCenterImage from './assets/contact-us.png'
 function App() {
   const { t, i18n } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const typography = {
+    heroTitle: 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-gray-900',
+    heroSubtitle: 'text-lg md:text-2xl font-medium tracking-wide text-gray-600',
+    sectionTitle: 'text-3xl md:text-4xl font-bold text-gray-900',
+    body: 'text-base md:text-lg leading-relaxed text-gray-600',
+    bodyEmphasis: 'text-lg md:text-xl leading-relaxed font-semibold text-blue-600',
+    cardTitle: 'text-2xl md:text-3xl font-semibold text-gray-900',
+  };
+
+  const spacing = {
+    sectionBlock: 'py-16',
+    titleBottom: 'mb-4',
+    bodyBottom: 'mb-8',
+  };
   
   // 设置HTML语言属性，对SEO和可访问性很重要
   useEffect(() => {
@@ -234,17 +249,21 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-0 relative">
             <div>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-3 whitespace-nowrap text-shadow-lg lg:relative lg:z-10 lg:-mr-12 lg:pr-12">
+              <h1 className={`${typography.heroTitle} mb-4 whitespace-nowrap text-shadow-lg lg:relative lg:z-10 lg:-mr-12 lg:pr-12`}>
                 {t('hero.title1')} <span className="text-[#1567B9]">{t('hero.title2')}</span>
               </h1>
-              <h2 className="text-1xl sm:text-1xl md:text-2xl lg:text-3xl text-gray-500 mb-57 lg:relative lg:z-10 lg:-mr-12 lg:pr-12 tracking-[0.81em] text-left text-shadow whitespace-nowrap">{t('hero.subtitle')}</h2>
+              <h2 className={`${typography.heroSubtitle} mb-4 lg:relative lg:z-10 lg:-mr-12 lg:pr-12 text-left text-shadow`}>
+                {t('hero.subtitle')}
+              </h2>
+              <p className={`${typography.body} mb-6 max-w-xl lg:relative lg:z-10 lg:-mr-12 lg:pr-12`}>
+                {t('hero.card.description')}
+              </p>
 
-              
               <div className="bg-[#D9E7F7] p-5 rounded-lg card-shadow max-w-md">
-                <h3 className="text-3xl font-regular text-gray-900 mb-3">
+                <h3 className={`${typography.cardTitle} mb-3`}>
                   {t('hero.card.title')}
                 </h3>
-                <p className="text-[#1567B9] text-1xl">
+                <p className="text-base md:text-lg leading-relaxed text-[#1567B9]">
                   {t('hero.card.description')}
                 </p>
               </div>
@@ -262,21 +281,22 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section className={`${spacing.sectionBlock} bg-white`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mt-20 mb-35">
-            <h2 className="text-7xl font-bold text-gray-900 mb-4 fade-in-up">
-              {t('services.title')} <span className="gradient-text text-6xl"> {t('services.title1')} </span> <span className="text-6xl font-bold text-gray-900 mb-4"> {t('services.title2')} </span> 
-			  <motion.p
-  className="text-2xl text-gray-700"
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true, amount: 0.2 }} // 20% visible triggers it, runs once
->
-  {t('hero.subtitle')}
-</motion.p>
+          <div className="text-center mt-20 mb-16">
+            <h2 className={`${typography.sectionTitle} ${spacing.titleBottom} fade-in-up`}>
+              {t('services.title')} <span className="gradient-text">{t('services.title1')}</span>{' '}
+              {t('services.title2')}
             </h2>
+            <motion.p
+              className={typography.body}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {t('hero.subtitle')}
+            </motion.p>
           </div>
 		  
 <section className="pt-24 pb-16 hero-gradient">
@@ -290,14 +310,14 @@ function App() {
       </div>
       
       {/* Main Headline */}
-      <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+      <h3 className={`${typography.sectionTitle} leading-tight mb-6`}>
         Discover the future of{" "}
         <span className="gradient-text">healthcare quality</span>{" "}
         management
-      </h1>
+      </h3>
       
       {/* Subheadline */}
-      <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+      <p className={`${typography.body} mb-8 max-w-3xl mx-auto`}>
         Transform your healthcare operations with AI-driven quality management solutions that streamline compliance, improve patient outcomes, and accelerate your organizational excellence.
       </p>
       
@@ -327,7 +347,7 @@ function App() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {t('services.quality.title')}
               </h3>
-              <p className="text-gray-600">
+              <p className={typography.body}>
                 {t('services.quality.description')}
               </p>
             </div>
@@ -344,7 +364,7 @@ function App() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {t('services.digital.title')}
               </h3>
-              <p className="text-gray-600">
+              <p className={typography.body}>
                 {t('services.digital.description')}
               </p>
             </div>
@@ -361,7 +381,7 @@ function App() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {t('services.contact.title')}
               </h3>
-              <p className="text-gray-600">
+              <p className={typography.body}>
                 {t('services.contact.description')}
               </p>
             </div>
@@ -370,24 +390,24 @@ function App() {
       </section>
 
       {/* Platform Section */}
-      <section className="py-16 bg-gray-50">
+      <section className={`${spacing.sectionBlock} bg-gray-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className={`${typography.sectionTitle} ${spacing.titleBottom}`}>
             {t('platform.title')}
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className={`${typography.body} ${spacing.bodyBottom}`}>
             {t('platform.video')}
           </p>
-          <p className="text-xl text-blue-600 font-semibold">
+          <p className={typography.bodyEmphasis}>
             {t('platform.belief')}
           </p>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 bg-white">
+      <section className={`${spacing.sectionBlock} bg-white`}>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className={`${typography.sectionTitle} mb-12 text-center`}>
             {t('about.title')}
           </h2>
           
@@ -396,13 +416,13 @@ function App() {
             <div className="bg-gray-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about.singapore')}</h3>
               <div className="space-y-3">
-                <p className="text-gray-600">
+                <p className={typography.body}>
                   <span className="font-medium">{t('about.email')}:</span> agoh@algoquality.com
                 </p>
-                <p className="text-gray-600">
+                <p className={typography.body}>
                   <span className="font-medium">{t('about.tel')}:</span> +65 9731-2557
                 </p>
-                <p className="text-gray-600">
+                <p className={typography.body}>
                   <span className="font-medium">{t('about.address')}:</span><br />
                   169 Jln Jurong Kechil<br />
                   Singapore 598669
@@ -414,13 +434,13 @@ function App() {
             <div className="bg-gray-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about.shanghai')}</h3>
               <div className="space-y-3">
-                <p className="text-gray-600">
+                <p className={typography.body}>
                   <span className="font-medium">{t('about.email')}:</span> agoh@algoquality.com
                 </p>
-                <p className="text-gray-600">
+                <p className={typography.body}>
                   <span className="font-medium">{t('about.tel')}:</span> +86 183-0175-1255
                 </p>
-                <p className="text-gray-600">
+                <p className={typography.body}>
                   <span className="font-medium">{t('about.address')}:</span><br />
                   668 Xinzhuan Road, Songjiang District<br />
                   Shanghai, China
@@ -466,4 +486,3 @@ function App() {
 }
 
 export default App
-
