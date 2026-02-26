@@ -16,15 +16,36 @@ import callCenterImage from '../assets/contact-us.png'
 
 
 
-// import your images here too, if Home uses them
+// import  images here too, if Home uses them
 // import heroImage from "../assets/..."  (example)
+
+
+
+// Motion presets (put near top of Home.jsx)
+const easeOut = [0.16, 1, 0.3, 1];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 14 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: easeOut, delay: i * 0.08 },
+  }),
+};
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+  },
+};
 
 export default function Home() {
   const { t } = useTranslation();
 
   return (
     <div>
-      {/* paste your homepage sections here */}
+      {/* Homepage sections here */}
 	  
 
 	
