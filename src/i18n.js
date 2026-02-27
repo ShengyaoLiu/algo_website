@@ -28,7 +28,7 @@ const resources = {
       "services.quality.title": "Quality Consulting Services",
       "services.quality.description": "Quality consulting services for audit, SOP writing, QMS, risk management, training, inspection readiness, cross-border data governance and AI governance",
       "services.digital.title": "Digital Health Technology", 
-      "services.digital.description": "A first-in-class healthcare technology platform helping doctors to enable, integrate and digitalise the management of patients in clinical research",
+      "services.digital.description": "ALGO+: a first-in-class healthcare technology platform helping doctors to enable, integrate and digitalise the management of patients in clinical research",
       "services.contact.title": "Contact us",
       "services.contact.description": "Get in touch with our team for personalized support and consultation",
       
@@ -48,7 +48,7 @@ const resources = {
       "about.privacy": "Privacy Policy",
       
       // Footer
-      "footer.copyright": "© 2025 ALGO Quality Company. All rights reserved.",
+      "footer.copyright": "© {{year}} ALGO Quality. All rights reserved.",
       
       // Language Selector
       "language.switch": "Visit English Site",

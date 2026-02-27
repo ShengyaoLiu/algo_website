@@ -4,6 +4,7 @@
             font-family: 'Inter', sans-serif;
         }
         
+		
         .gradient-text {
             background: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4);
             -webkit-background-clip: text;
@@ -74,7 +75,7 @@
         }
         
         .nav-link:hover {
-            color: #3B82F6;
+            color: #2563EB;
         }
         
         .nav-link::after {
@@ -84,7 +85,7 @@
             height: 2px;
             bottom: -4px;
             left: 50%;
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            background: linear-gradient(90deg, #2563EB, #9333EA, #0891B2);
             transition: all 0.3s ease;
         }
         

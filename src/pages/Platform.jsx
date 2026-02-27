@@ -113,7 +113,7 @@ export default function Platform() {
       title: T("platformPage.modules.integrations.title", "Quality & Compliance"),
       bullets: [
         T("platformPage.modules.integrations.b1", "Streamline and secure routine clinic processes with data integrity and full GCP & HIPAA compliance"),
-        T("platformPage.modules.integrations.b2", "CAPA and deviation workflows (?) with complete, audit-ready traceability."),
+        T("platformPage.modules.integrations.b2", "GCP- and 21 CFR Part 11-compliant with built-in privacy, security, and audit-ready traceability."),
         T("platformPage.modules.integrations.b3", "Role-based access control and structured approval workflows."),
       ],
     },
@@ -224,7 +224,7 @@ export default function Platform() {
 	  
         {/* Quote pill */}
         <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm border border-gray-100">
-          <span className="w-2 h-2 bg-green-500 rounded-full shrink-0" />
+          
           <div className="flex items-center gap-1">
             <span className="text-gray-400 opacity-30 font-serif text-s leading-none select-none -mb-1">
               &ldquo;
@@ -467,77 +467,7 @@ active:translate-y-0
 
 
 
-{/* Video Placeholder */}
-<section className="py-16 bg-white">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Section header */}
-    <div className="text-center max-w-3xl mx-auto">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-        {T("platformPage.video.title", "See ALGO+ in action")}
-      </h2>
-      <p className="mt-4 text-gray-600 leading-relaxed">
-        {T(
-          "platformPage.video.subtitle",
-          "A short walkthrough of the patient app and doctor dashboard — built for secure, compliant clinical research workflows."
-        )}
-      </p>
-    </div>
 
-    {/* Video card */}
-    <div className="mt-10">
-      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gradient-to-br from-slate-50 to-slate-100 shadow-lg">
-        {/* 16:9 area */}
-        <div className="aspect-video w-full relative">
-          {/* Soft “media” background */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.18),transparent_60%)]" />
-
-          {/* Center play button */}
-          <button
-            type="button"
-            className="
-              absolute inset-0 m-auto
-              h-16 w-16 sm:h-20 sm:w-20
-              rounded-full
-              bg-white/90 backdrop-blur
-              border border-white/60
-              shadow-xl
-              grid place-items-center
-              hover:scale-[1.04] hover:shadow-2xl
-              active:scale-[0.98]
-              transition-all
-            "
-            aria-label={T("platformPage.video.play", "Play video")}
-            onClick={() => {
-              // later: open modal / swap to real video
-              console.log("Play placeholder");
-            }}
-          >
-            {/* Play icon */}
-            <span className="ml-1 inline-block w-0 h-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-blue-600" />
-          </button>
-
-          {/* Bottom label */}
-          <div className="absolute left-4 right-4 bottom-4 sm:left-6 sm:right-6 sm:bottom-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2 text-sm text-gray-700 border border-gray-200">
-              <span className="h-2 w-2 rounded-full bg-green-500" />
-              <span>
-                {T("platformPage.video.badge", "2-min product overview")}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Optional helper text */}
-      <p className="mt-4 text-center text-sm text-gray-500">
-        {T(
-          "platformPage.video.note",
-          "Note: will replace this placeholder with video... when ready."
-        )}
-      </p>
-    </div>
-  </div>
-</section>
 
 
 
