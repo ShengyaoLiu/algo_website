@@ -62,19 +62,19 @@ export default function Company() {
     {/* Mission (now INSIDE the gradient section) */}
     <div className="mt-2 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
       <motion.div variants={fadeUp} custom={1}>
-        <h2 className="text-4xl sm:text-4xl font-bold text-gray-900">
+        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
           {t("companyPage.mission.title1", "Our")}{" "}
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">{t("companyPage.mission.title2", "mission")}</span>
+          <span className="text-gray-900">{t("companyPage.mission.title2", "mission")}</span>
         </h2>
 
-        <p className="mt-4 text-gray-600 leading-relaxed">
+        <p className="mt-5 text-gray-600 leading-relaxed">
           {t(
             "companyPage.mission.body",
             "We combine quality consulting and digital technology to help teams run compliant, efficient, and patient-centric clinical research."
           )}
         </p>
 
-        <div className="mt-8 rounded-2xl bg-slate-900 text-white p-6 overflow-hidden relative">
+        <div className="mt-12 rounded-2xl bg-slate-900 text-white p-6 overflow-hidden relative">
           <div className="absolute inset-0 opacity-25 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500" />
           <div className="relative">
             <h3 className="text-lg font-semibold">

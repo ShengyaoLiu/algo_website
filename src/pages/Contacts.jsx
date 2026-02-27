@@ -106,38 +106,53 @@ export default function Contacts() {
               {t("contact.formTitle", "Send a message")}
             </h2>
 
-            <form className="space-y-5">
-              <input
-                type="text"
-                placeholder="Your name"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+            <form
+  action="http://www.algoquality.com/fcf-assets/fcf.process.php"
+  method="POST"
+  className="space-y-5"
+>
+  <input
+    type="text"
+    name="Name"
+    placeholder="Your name"
+    required
+    maxLength={100}
+    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
 
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+  <input
+    type="email"
+    name="Email"
+    placeholder="Your email"
+    required
+    maxLength={100}
+    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
 
-              <input
-                type="text"
-                placeholder="Organisation"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+  {/* Optional: Organisation (won’t be sent unless your PHP script supports it) */}
+  <input
+    type="text"
+    name="Organisation"
+    placeholder="Organisation (optional)"
+    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
 
-              <textarea
-                rows="4"
-                placeholder="Your message"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+  <textarea
+    rows="4"
+    name="Message"
+    placeholder="Your message"
+    required
+    maxLength={3000}
+    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
 
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition"
-              >
-                Send Message
-              </button>
-            </form>
+  <button
+    type="submit"
+    className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition"
+  >
+    Send Message
+  </button>
+</form>
           </motion.div>
         </div>
       </motion.section>
