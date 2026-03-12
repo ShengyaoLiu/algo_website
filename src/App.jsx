@@ -5,12 +5,15 @@ import { ReactPlugin } from "@stagewise-plugins/react";
 import { useTranslation } from "react-i18next";
 import "./App.css";
 
+import { Languages } from "lucide-react";
+import { Globe } from "lucide-react";
+
 import ScrollToTop from "./components/ScrollToTop";
 
 import logoImage from "./assets/logo.png";
 
 // router
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, NavLink, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
@@ -55,6 +58,17 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
+const navLinkClass = ({ isActive }) =>
+  `nav-link font-medium ${isActive ? "nav-link-active text-blue-600" : "text-gray-700"}`;
+
+const mobileNavLinkClass = ({ isActive }) =>
+  [
+    "block px-3 py-2 rounded-md text-base font-medium transition-colors",
+    isActive
+      ? "text-blue-600 bg-blue-50"
+      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50",
+  ].join(" ");
+
   return (
     <div className="min-h-screen bg-white">
       <ScrollToTop />
@@ -82,23 +96,27 @@ function App() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/platform" className="nav-link text-gray-700 font-medium">
-                {t("platform")}
-              </Link>
-              <Link to="/solutions" className="nav-link text-gray-700 font-medium">
-                {t("solutions")}
-              </Link>
-              <Link to="/company" className="nav-link text-gray-700 font-medium">
-                {t("company")}
-              </Link>
-              <Link to="/resources" className="nav-link text-gray-700 font-medium">
-                {t("resources")}
-              </Link>
-              <Link to="/contacts" className="nav-link text-gray-700 font-medium">
-                {t("contacts")}
-              </Link>
-            </div>
+<div className="hidden md:flex items-center space-x-8">
+  <NavLink to="/platform" className={navLinkClass}>
+    {t("platform")}
+  </NavLink>
+
+  <NavLink to="/solutions" className={navLinkClass}>
+    {t("solutions")}
+  </NavLink>
+
+  <NavLink to="/company" className={navLinkClass}>
+    {t("company")}
+  </NavLink>
+
+  <NavLink to="/resources" className={navLinkClass}>
+    {t("resources")}
+  </NavLink>
+
+  <NavLink to="/contacts" className={navLinkClass}>
+    {t("contacts")}
+  </NavLink>
+</div>
 
             {/* Desktop Right side */}
             <div className="flex items-center space-x-4">
@@ -116,43 +134,48 @@ function App() {
                 </Button>
               </a>
 
-              {/* Language switch */}
-              <div className="flex items-center space-x-2">
-                {currentSite.site === "localhost" ? (
-                  <>
-                    <button
-                      onClick={() => changeLanguage("en")}
-                      className="px-3 py-1 text-sm bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
-                      title="Visit algoquality.com"
-                    >
-                      🇬🇧 EN
-                    </button>
-                    <button
-                      onClick={() => changeLanguage("zh")}
-                      className="px-3 py-1 text-sm bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
-                      title="访问 aiminjia.com"
-                    >
-                      🇨🇳 中文
-                    </button>
-                  </>
-                ) : currentSite.current === "zh" ? (
-                  <button
-                    onClick={() => changeLanguage("en")}
-                    className="px-3 py-2 bg-white rounded border text-sm font-medium hover:bg-blue-50"
-                    title="Visit algoquality.com"
-                  >
-                    🇬🇧 English
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => changeLanguage("zh")}
-                    className="px-3 py-2 bg-white rounded border text-sm font-medium hover:bg-blue-50"
-                    title="访问 aiminjia.com"
-                  >
-                    🇨🇳 中文
-                  </button>
-                )}
-              </div>
+{/* Language switch */}
+<div className="flex items-center space-x-2">
+  {currentSite.site === "localhost" ? (
+    <>
+      <button
+        onClick={() => changeLanguage("en")}
+        className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+        title="Visit algoquality.com"
+      >
+        <Globe className="h-4 w-4 text-[#1567B9] shrink-0" />
+        EN
+      </button>
+
+      <button
+        onClick={() => changeLanguage("zh")}
+        className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+        title="访问 aiminjia.com"
+      >
+        <Globe className="h-4 w-4 text-[#1567B9] shrink-0" />
+        中文
+      </button>
+    </>
+  ) : currentSite.current === "zh" ? (
+    <button
+      onClick={() => changeLanguage("en")}
+      className="inline-flex items-center gap-2 px-3 py-2 bg-white rounded border text-sm font-medium hover:bg-blue-50 transition-colors"
+      title="Visit algoquality.com"
+    >
+      <Globe className="h-4 w-4 text-[#1567B9] shrink-0" />
+      English
+    </button>
+  ) : (
+    <button
+      onClick={() => changeLanguage("zh")}
+      className="inline-flex items-center gap-2 px-3 py-2 bg-white rounded border text-sm font-medium hover:bg-blue-50 transition-colors"
+      title="访问 aiminjia.com"
+    >
+      <Globe className="h-4 w-4 text-[#1567B9] shrink-0" />
+      中文
+    </button>
+  )}
+</div>
 
               {/* Mobile menu button */}
               <div className="md:hidden flex items-center space-x-2">
@@ -178,45 +201,45 @@ function App() {
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <Link
-                to="/platform"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {t("platform")}
-              </Link>
+<NavLink
+  to="/platform"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className={mobileNavLinkClass}
+>
+  {t("platform")}
+</NavLink>
 
-              <Link
-                to="/solutions"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {t("solutions")}
-              </Link>
+<NavLink
+  to="/solutions"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className={mobileNavLinkClass}
+>
+  {t("solutions")}
+</NavLink>
 
-              <Link
-                to="/company"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {t("company")}
-              </Link>
+<NavLink
+  to="/company"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className={mobileNavLinkClass}
+>
+  {t("company")}
+</NavLink>
 
-              <Link
-                to="/resources"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {t("resources")}
-              </Link>
+<NavLink
+  to="/resources"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className={mobileNavLinkClass}
+>
+  {t("resources")}
+</NavLink>
 
-              <Link
-                to="/contacts"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {t("contacts")}
-              </Link>
+<NavLink
+  to="/contacts"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className={mobileNavLinkClass}
+>
+  {t("contacts")}
+</NavLink>
 
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <a

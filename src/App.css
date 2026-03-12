@@ -11,6 +11,14 @@
             background-clip: text;
             color: transparent;
         }
+		
+		.gradient-text-soft {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.18));
+}
         
         .hero-gradient {
             background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);

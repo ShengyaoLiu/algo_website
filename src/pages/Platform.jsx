@@ -34,7 +34,7 @@ const cardHover =
 
 function Icon({ children }) {
   return (
-    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center">
+    <div className="w-12 h-12 rounded-xl bg-gradiradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center">
       {children}
     </div>
   );

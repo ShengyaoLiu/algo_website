@@ -112,14 +112,18 @@ export default function Company() {
                 "companyPage.pillars.one.title",
                 "Commitment to Modern Quality"
               )}
-              subtitle={t(
-                "companyPage.pillars.one.subtitle",
-                "By simplification."
-              )}
-              desc={t(
-                "companyPage.pillars.one.desc",
-                "Clinical research is hampered by complex and demanding processes that hinder the discovery and development of treatments for patients. With more than two decades of clinical research quality experience, we simplify the approach to quality for researchers and drive operations-based improvements to clinical trial experience for all."
-              )}
+			  
+              subtitle={
+				  <span className="gradient-text-soft">
+      {t("companyPage.pillars.one.subtitle", "By simplification.")}
+    </span>
+              }
+             desc={
+  <>
+    Clinical research is hampered by complex and demanding processes that hinder the discovery and development of treatments for patients. With more than two decades of clinical research quality experience,{" "}
+    <span className="text-blue-600 font-regular">we simplify the approach to quality for researchers</span>{" "}and drive operations-based improvements to clinical trial experience for all.
+  </>
+}
             />
 
             <PillarCard
@@ -127,14 +131,15 @@ export default function Company() {
                 "companyPage.pillars.two.title",
                 "Effective Connection"
               )}
-              subtitle={t(
-                "companyPage.pillars.two.subtitle",
-                "Powered by innovation."
-              )}
-              desc={t(
-                "companyPage.pillars.two.desc",
-                "Technology advancements that aim to improve the experience of researchers and patients are often designed in silos, marketed exclusively, and made costly for widespread use. With more than two decades of hands-on clinical research operational experience, we have designed a novel user- and cost-friendly platform that prioritises the personal experience of patients and researchers by minimising challenges and accelerating research."
-              )}
+              subtitle={<span className="gradient-text-soft">
+      {t("companyPage.pillars.one.subtitle", "Powered by innovation.")}
+    </span>}
+              desc={
+				<>
+				Technology advancements aiming to improve the experience of researchers and patients are often designed in silos and costly for widespread use. With more than two decades of hands-on clinical research operational experience,{" "}
+    <span className="text-blue-600 font-regular">we have designed a novel user- and cost-friendly platform</span>{" "}that prioritises the personal experience of patients and researchers by minimising challenges and accelerating research.
+				
+                </>}
             />
           </motion.div>
 
